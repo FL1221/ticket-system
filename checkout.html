@@ -1,0 +1,138 @@
+<!-- ############################################## -->
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html");
+    exit;
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Finalizacja zamówienia – EventShop</title>
+  <style>
+    /* Podstawowy reset i font */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #e9f0ff;
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,123,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EventShop</h1>
+    <nav>
+      <a href="index.html">Strona główna</a>
+      <a href="cart.html">Koszyk</a>
+      <a href="help.html">Pomoc</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Podsumowanie zamówienia</h2>
+
+    <section class="order-summary">
+      <div class="order-item">
+        <p>Koncert Rockowy</p>
+        <p>Ilość: 2 bilety</p>
+        <p>Cena: 200 PLN</p>
+      </div>
+
+      <div class="order-item">
+        <p>Stand-up Comedy Night</p>
+        <p>Ilość: 1 bilet</p>
+        <p>Cena: 100 PLN</p>
+      </div>
+
+      <div class="order-total">
+        <h3>Łączna kwota: 300 PLN</h3>
+      </div>
+    </section>
+
+    <h3>Podaj dane do płatności:</h3>
+
+    <form action="#" method="post">
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="card-number">Numer karty:</label>
+      <input type="text" id="card-number" name="card-number" required>
+
+      <label for="expiry-date">Data ważności:</label>
+      <input type="text" id="expiry-date" name="expiry-date" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required>
+
+      <button type="submit">Złóż zamówienie</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EventShop</p>
+  </footer>
+</body>
+</html>

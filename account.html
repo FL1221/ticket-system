@@ -1,0 +1,134 @@
+<!-- dodane #################################### -->
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html");
+    exit;
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Moje konto – EventShop</title>
+  <style>
+    /* Podstawowy reset i font */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #e9f0ff;
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,123,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EventShop – Moje konto</h1>
+    <nav>
+      <a href="index.html">Strona główna</a>
+      <a href="events.html">Wydarzenia</a>
+      <a href="cart.html">Koszyk</a>
+      <a href="help.html">Pomoc</a>
+      <a href="index.html">Wyloguj</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Witaj, [Imię użytkownika]</h2>
+    
+    <!-- Panel dla klienta -->
+    <section id="user-panel">
+      <h3>Edytuj swoje dane</h3>
+      <form action="#" method="post">
+        <label for="user-name">Imię:</label>
+        <input type="text" id="user-name" name="user-name" value="Jan" required>
+        
+        <label for="user-email">E-mail:</label>
+        <input type="email" id="user-email" name="user-email" value="jan.kowalski@example.com" required>
+        
+        <label for="user-password">Nowe hasło:</label>
+        <input type="password" id="user-password" name="user-password">
+        
+        <button type="submit">Zapisz zmiany</button>
+      </form>
+    </section>
+
+    
+    <!-- Panel wspólny -->
+    <section id="common-panel">
+      <h3>Historia zamówień (tylko dla klientów)</h3>
+      <ul>
+        <li>Koncert Rockowy – 2 bilety (Pierwszy rząd) – 200 PLN</li>
+        <li>Spektakl Teatralny – 1 bilet (Środkowy rząd) – 100 PLN</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EventShop</p>
+  </footer>
+
+  <script>
+    // Funkcja dla organizatora, aby edytować wydarzenie
+    function editEvent() {
+      alert("Edytujesz to wydarzenie.");
+    }
+  </script>
+</body>
+</html>

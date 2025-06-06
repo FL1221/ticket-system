@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zaloguj się – EventPass</title>
+   <style>
+    /* Podstawowy reset i font */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #e9f0ff;
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,123,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EventPass</h1>
+    <nav>
+      <a href="index.php">Strona główna</a>
+      <a href="events.php">Wydarzenia</a>
+      <a href="help.html">Pomoc</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login-register">
+      <div class="form-box">
+        <h2>Logowanie</h2>
+        <!-- dodane ############################################## -->
+        <form method="POST" action="login.php">
+          <label>Email:</label>
+          <input type="email" name="email" required>
+          <br>
+          <label>Hasło:</label>
+          <input type="password" name="password" required>
+          <br>
+          <button type="submit">Zaloguj się</button>
+        </form>
+
+        <p>Nie masz konta? <a >Zarejestruj się</a></p>
+      </div>
+
+      <div class="form-box">
+        <form action="register.php" method="POST">
+          <label for="username">Nazwa użytkownika:</label>
+          <input type="text" name="username" id="username" required>
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+
+          <label for="password">Hasło:</label>
+          <input type="password" name="password" id="password" required>
+
+          <label for="role">Typ konta:</label>
+          <select name="role" id="role" required>
+            <option value="client" selected>Klient</option>
+            <option value="organizer">Organizator</option>
+          </select>
+
+          <button type="submit">Zarejestruj się</button>
+        </form>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EventPass</p>
+  </footer>
+</body>
+</html>
