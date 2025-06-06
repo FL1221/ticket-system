@@ -1,5 +1,6 @@
 <?php
 session_start();
+$role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
 require_once 'includes/db.php';
 
 if (!isset($_GET['id'])) {

@@ -109,7 +109,7 @@ $stats = $resultStats->fetch_assoc();
 </head>
 <body>
   <header>
-    <h1>EventShop – Panel organizatora</h1>
+    <h1>EventPass – Panel organizatora</h1>
     <nav>
       <a href="create-event.html">Dodaj wydarzenie</a>
       <a href="dashboard.php">Moje wydarzenia</a>
@@ -157,7 +157,7 @@ $stats = $resultStats->fetch_assoc();
 
 
   <footer>
-    <p>&copy; 2025 EventShop</p>
+    <p>&copy; 2025 EventPass</p>
   </footer>
 </body>
 </html>

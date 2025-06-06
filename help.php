@@ -7,7 +7,7 @@ $role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Pomoc – EventShop</title>
+  <title>Pomoc – EventPass</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
     header { background-color: #007bff; color: white; padding: 20px 30px; text-align: center; }
@@ -22,7 +22,7 @@ $role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
 </head>
 <body>
   <header>
-    <h1>EventShop – Pomoc</h1>
+    <h1>EventPass – Pomoc</h1>
     <nav>
       <a href="index.php">Strona główna</a>
       <a href="help.php">Pomoc</a>
@@ -75,7 +75,7 @@ $role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
       <h2>Kontakt</h2>
       <p>Masz problem lub pytanie? Skontaktuj się z nami:</p>
       <ul>
-        <li>Email: pomoc@eventshop.pl</li>
+        <li>Email: pomoc@eventpass.pl</li>
         <li>Telefon: +48 123 456 789</li>
         <li>Godziny pracy: Pon–Pt, 9:00–17:00</li>
       </ul>
@@ -83,7 +83,7 @@ $role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
   </main>
 
   <footer>
-    <p>&copy; 2025 EventShop. Wszelkie prawa zastrzeżone.</p>
+    <p>&copy; 2025 EventPass. Wszelkie prawa zastrzeżone.</p>
   </footer>
 </body>
 </html>
