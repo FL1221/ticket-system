@@ -144,7 +144,7 @@ $stats = $resultStats->fetch_assoc();
                 <td><?= max(0, $row['total_tickets'] - $row['tickets_sold']) ?></td>
                 <td><?= $row['tickets_sold'] ?></td>
                 <td><?= number_format($row['ticket_price'], 2, ',', ' ') ?> PLN</td>
-                <td><a href="edit-event.html?id=<?= $row['id'] ?>">Edytuj</a></td>
+                <td><a href="edit-event.php?id=<?= $row['id'] ?>">Edytuj</a></td>
               </tr>
             <?php endwhile; ?>
           </tbody>

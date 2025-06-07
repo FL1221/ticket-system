@@ -3,9 +3,15 @@
 ?>
 
 <nav>
-  <a href="index.php">Strona główna</a>
-  <a href="events.php">Wydarzenia</a>
-  <a href="cart.php">Koszyk</a>
+  <?php if ($role !== 'organizer'): ?>
+    <a href="index.php">Strona główna</a>
+  <?php endif; ?>
+  <?php if ($role !== 'organizer'): ?>
+    <a href="events.php">Wydarzenia</a>
+  <?php endif; ?>
+  <?php if ($role !== 'organizer'): ?>
+    <a href="cart.php">Koszyk</a>
+  <?php endif; ?>
   <a href="help.php">Pomoc</a>
 
   <?php if ($role === 'organizer'): ?>

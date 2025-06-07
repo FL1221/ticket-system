@@ -94,7 +94,7 @@ $role = $user['role'];  // np. do pokazywania dodatkowych opcji, jeśli admin/or
       <a href="index_klient.php">Strona główna</a>
       <a href="events.php">Wydarzenia</a>
       <a href="cart.php">Koszyk</a>
-      <a href="profile.php">Profil </a>
+      <a href="profile-klient.php">Profil </a>
       <?php if ($role === 'organizer' || $role === 'admin'): ?>
         <a href="organizer/dashboard.php">Panel organizatora</a>
       <?php endif; ?>

@@ -22,20 +22,9 @@ $role = $_SESSION['role'] ?? null;  // null jeśli nie zalogowany
 </head>
 <body>
   <header>
-    <h1>EventPass – Pomoc</h1>
-    <nav>
-      <a href="index.php">Strona główna</a>
-      <a href="help.php">Pomoc</a>
-      <?php if ($role === null): ?>
-        <a href="login.html">Zaloguj się</a>
-        <a href="register.html">Zarejestruj się</a>
-      <?php elseif ($role === 'organizer'): ?>
-        <a href="organizer/dashboard.php">Panel organizatora</a>
-        <a href="logout.php">Wyloguj się</a>
-      <?php else: ?>
-        <a href="logout.php">Wyloguj się</a>
-      <?php endif; ?>
-    </nav>
+    <h1>Pomoc</h1>
+    <?php include 'navbar.php'; ?>
+
   </header>
 
   <main>

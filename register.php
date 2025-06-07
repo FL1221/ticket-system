@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Bezpieczne przypisanie roli - pozwól na client i organizer, ale nie admin (możesz zmienić wedle potrzeb)
     $role = 'client'; 
-    if (isset($_POST['role']) && in_array($_POST['role'], ['client', 'organizer'])) {
+    if (isset($_POST['role']) && in_array($_POST['role'], ['client', 'organizer', 'admin'])) {
         $role = $_POST['role'];
     }
 
