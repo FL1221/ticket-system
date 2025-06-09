@@ -2,6 +2,8 @@
 session_start();
 require_once 'includes/db.php';
 
+$payment_method = $_POST['payment_method'] ?? 'nieokreślona';
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit;
@@ -18,6 +20,8 @@ if (empty($cart)) {
 $conn->begin_transaction();
 
 try {
+    $purchased_ticket_ids = []; // tablica na zakupione bilety
+
     foreach ($cart as $event_id => $quantity) {
         // Pobierz dostępne bilety dla wydarzenia (user_id IS NULL)
         $stmt = $conn->prepare("SELECT id FROM tickets WHERE event_id = ? AND user_id IS NULL LIMIT ?");
@@ -44,7 +48,6 @@ try {
         $stmt_update = $conn->prepare($sql);
 
         // Przygotuj parametry do bind_param
-        // bind_param wymaga referencji, więc trzeba zrobić trochę zabawy:
         $params = array_merge([$user_id, $purchase_date], $ticket_ids);
         $bind_names = [];
         $bind_names[] = 'is' . $types;
@@ -58,6 +61,9 @@ try {
         if ($stmt_update->affected_rows != $quantity) {
             throw new Exception("Wystąpił błąd podczas przypisywania biletów dla wydarzenia ID $event_id.");
         }
+
+        // Dodaj zakupione bilety do głównej tablicy
+        $purchased_ticket_ids = array_merge($purchased_ticket_ids, $ticket_ids);
     }
 
     $conn->commit();
@@ -65,7 +71,16 @@ try {
     // Czyścimy koszyk
     unset($_SESSION['cart']);
 
-    echo "Zakup zakończony sukcesem! <a href='events.php'>Wróć do wydarzeń</a>";
+    echo "Zakup zakończony sukcesem!<br><br>";
+
+    if (!empty($purchased_ticket_ids)) {
+        // Link do pierwszego biletu (możesz rozszerzyć do pobierania wielu)
+        $first_ticket_id = $purchased_ticket_ids[0];
+        echo "<a href='download-ticket.php?ticket_id=$first_ticket_id' target='_blank'><button>Pobierz bilet</button></a><br><br>";
+    }
+
+    echo "<a href='events.php'>Wróć do wydarzeń</a>";
+
 } catch (Exception $e) {
     $conn->rollback();
     echo "Błąd podczas zakupu: " . $e->getMessage() . " <a href='cart.php'>Wróć do koszyka</a>";

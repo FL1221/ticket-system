@@ -106,7 +106,7 @@ if (!empty($cart)) {
 
 <main>
   <?php if (!empty($cart) && !empty($eventDetails)): ?>
-    <form action="buy.php" method="post">
+    <form action="payment-method.php" method="post">
       <table>
         <thead>
           <tr>
