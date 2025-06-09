@@ -30,7 +30,7 @@ $result = $conn->query($sql);
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Panel administratora – EventShop</title>
+  <title>Panel administratora – EventPass</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
     header { background: #333; color: #fff; padding: 20px; text-align: center; }
